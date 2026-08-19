@@ -1,0 +1,86 @@
+FAE_copilot/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── .env.example
+├── docker-compose.yml
+│
+├── config/
+│   ├── models.yaml
+│   ├── retrieval.yaml
+│   └── sensors.yaml
+│
+├── data/
+│   ├── raw/
+│   │   ├── emails/
+│   │   ├── documents/
+│   │   └── attachments/
+│   │
+│   ├── processed/
+│   │   ├── emails/
+│   │   ├── documents/
+│   │   └── cases/
+│   │
+│   └── metadata/
+│
+├── knowledge/
+│   ├── sensors/
+│   │   ├── IMX05A/
+│   │   ├── IMX09A/
+│   │   └── ...
+│   │
+│   ├── concepts/
+│   │   ├── exposure/
+│   │   ├── timing/
+│   │   ├── mipi/
+│   │   ├── hdr/
+│   │   └── power/
+│   │
+│   └── fae/
+│       ├── troubleshooting/
+│       ├── customer_communication/
+│       └── escalation/
+│
+├── cases/
+│   ├── IMX05A/
+│   ├── IMX09A/
+│   └── ...
+│
+├── ingestion/
+│   ├── email_parser/
+│   ├── pdf_parser/
+│   ├── doc_parser/
+│   └── attachment_parser/
+│
+├── retrieval/
+│   ├── hybrid_search.py
+│   ├── metadata_filter.py
+│   ├── reranker.py
+│   └── query_router.py
+│
+├── copilot/
+│   ├── agent.py
+│   ├── prompts/
+│   ├── tools/
+│   └── workflows/
+│
+├── database/
+│   ├── postgres/
+│   └── qdrant/
+│
+├── scripts/
+│   ├── ingest_email.py
+│   ├── ingest_document.py
+│   ├── build_index.py
+│   └── sync.py
+│
+├── tests/
+│   ├── retrieval/
+│   ├── parsing/
+│   └── cases/
+│
+└── docs/
+    ├── architecture.md
+    ├── data_schema.md
+    └── development.md
