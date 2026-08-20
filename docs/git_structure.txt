@@ -1,0 +1,93 @@
+FAE_copilot/
+│
+├── README.md               # 项目说明： 目的，架构，安装，启动，使用，进展；
+├── LICENSE                 # 项目许可
+├── .gitignore              # git忽略上传项；
+├── .env.example            # 环境变量模板；
+├── docker-compose.yml      # docker系统启动；
+│
+├── config/                 # 配置中心
+│   ├── models.yaml             # 选择模型，模型参数；
+│   ├── retrieval.yaml          # 搜索系统选择参数；
+│   └── sensors.yaml            # sensor基本索引；
+│
+├── schemas/                # 数据标准
+│   ├── case.yaml           # 一个case必须有哪些字段；这里不是放case，而是定义case的格式
+│   ├── email.yaml          # 一个Email是什么结构；
+│   ├── document.yaml       # 
+│   ├── evidence.yaml       # 一个Evidience应该有什么信息；
+│   └── common.yaml
+│
+├── data/                   # 仓库
+│   ├── raw/                # 原始资料和处理过程中的资料
+│   │   ├── emails/
+│   │   ├── documents/
+│   │   └── attachments/
+│   │
+│   ├── processed/          # 处理后的资料和处理过程中的资料
+│   │   ├── emails/
+│   │   ├── documents/
+│   │   └── cases/
+│   │
+│   └── metadata/            # 数据的索引信息
+│
+├── knowledge/               # 资料：整理后的知识 （比如前面原始资料可能是英文的长段的，然后这里就可以是类似于中文，特性）
+│   ├── sensors/             # 针对sensor整理出来的知识；比如timing.md/exposure.md/gain.md/mipi.md/known_issue.md
+│   │   ├── IMX05A/
+│   │   ├── IMX09A/
+│   │   └── ...
+│   │
+│   ├── concepts/            # 这里放跨sensor的通用FAE知识；
+│   │   ├── exposure/
+│   │   ├── timing/          # Tline.md / LLPCK.md / frame_length.md / exposure_time.md, 比如Tline是什么
+│   │   ├── mipi/
+│   │   ├── hdr/
+│   │   └── power/
+│   │
+│   └── fae/                 # FAE方法论
+│       ├── troubleshooting/ # Issue: 图像异常 --> 确认方向一/方向二/怀疑点1/怀疑点2 --> 如何排查
+│       ├── customer_communication/ # 问客户要条件一/条件二/条件三： mode / sensor / constraint
+│       └── escalation/      # 什么情况找HQ / 如何描述问题 / 提供哪些信息 / 描述规则 / 耗时统计
+│
+├── cases/                   # FAE历史案例库： 
+│   ├── IMX05A/              # case-2026-08-001-[sensor]-[customer]-[application]-
+│   ├── IMX09A/
+│   └── ...
+│
+├── ingestion/               # 资料入口，解析函数，接收资料，解析资料，结构化
+│   ├── email_parser/
+│   ├── pdf_parser/
+│   ├── doc_parser/
+│   └── attachment_parser/   # 处理各种文件，excel, csv, log, zip, img
+│
+├── retrieval/               # 怎么找到正确资料， 负责解析问题，提取关键词
+│   ├── hybrid_search.py
+│   ├── metadata_filter.py
+│   ├── reranker.py
+│   └── query_router.py
+│
+├── copilot/                 # 设置AI工作流
+│   ├── agent.py             # 主控制器
+│   ├── prompts/        
+│   ├── tools/
+│   └── workflows/
+│
+├── database/                # 给程序准备的快速查询的数据存储系统
+│   ├── postgresSQL/         # 结构化数据
+│   └── qdrant/              # 用予以搜索
+│
+├── scripts/                 # 人工操作工具箱，各种小函数，小窗口，比如导入邮件；导入文档；
+│   ├── ingest_email.py
+│   ├── ingest_document.py
+│   ├── build_index.py
+│   └── sync.py
+│
+├── tests/                   # 测试入口；
+│   ├── retrieval/
+│   ├── parsing/
+│   └── cases/
+│
+└── docs/                    # 项目设计说明书；
+    ├── architecture.md
+    ├── data_schema.md
+    └── development.md

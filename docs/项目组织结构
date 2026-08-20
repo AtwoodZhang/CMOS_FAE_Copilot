@@ -1,0 +1,20 @@
+                 Git
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+     Code/知识            Case
+     Schema               Summary
+     Prompt               Markdown
+     Config
+        │
+        │
+        ▼
+──────────────────────────────
+        Local Linux
+──────────────────────────────
+Raw Email
+Sensor PDF
+Attachments
+PostgreSQL
+Qdrant
+Embeddings
