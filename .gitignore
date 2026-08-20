@@ -216,3 +216,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Project-specific files
+*.pdf
+
+# Local data / datasets
+data/
+dataset/
+datasets/
+
+# Model files
+*.pth
+*.pt
+*.onnx
+*.tflite
+*.h5
+
+# Temporary files
+*.tmp
+*.temp

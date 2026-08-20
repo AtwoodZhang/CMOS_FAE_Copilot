@@ -1,0 +1,33 @@
+FAE_copilot/
+│
+├── sensor-copilot/
+│   │
+│   ├── app/                 ← UI / API
+│   ├── rag/                 ← RAG代码
+│   ├── ingestion/           ← PDF解析、切分
+│   ├── retrieval/           ← Vector / Hybrid Search
+│   ├── models/              ← 模型配置
+│   ├── configs/             ← 配置
+│   ├── scripts/             ← 启动、部署脚本
+│   ├── tests/
+│   ├── README.md
+│   ├── docker-compose.yml
+│   └── .gitignore
+│
+├── sensor_documents/        ← 公司资料
+│   ├── IMX05A/
+│           ├── SRM
+│           ├── Datesheet
+│   ├── IMX06A/
+│   └── IMX09A/
+│
+├── FAE history/             ← 公司资料
+│   ├── IMX05A/
+│           ├── email-1
+│           ├── email-2
+│   ├── IMX06A/
+│   └── IMX09A/
+│
+│
+├── data/summary             ← 向量数据库等
+│   ├── Date/Category/Details(Customer / Issue description / attempts / solution )	

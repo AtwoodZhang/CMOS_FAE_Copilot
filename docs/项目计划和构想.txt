@@ -1,0 +1,20 @@
+Windows
+   │
+   │ SSH / Browser
+   ▼
+Linux + RTX 3090 Ti
+   │
+   ├── Ollama
+   │     └── Qwen3 32B
+   │
+   ├── PostgreSQL
+   │     └── 结构化 Case / Email / Document Metadata
+   │
+   ├── Qdrant
+   │     └── Dense + BM25 Hybrid Retrieval
+   │
+   ├── FastAPI
+   │     └── FAE Copilot Backend
+   │
+   └── Open WebUI
+         └── 第一版 UI
